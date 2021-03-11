@@ -1,0 +1,10 @@
+ .news-card-list {
+     display: flex;
+     flex-wrap: wrap;
+ }
+
+ .default-news-card {
+     flex: 1 1 20ch;
+ }
+
+ .ad-section {}
