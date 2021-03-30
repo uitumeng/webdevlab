@@ -20,7 +20,7 @@ class MyProduct extends HTMLElement {
 
         .product img {
             box-shadow: 0.5vw 0.5vw 2vw #888;
-            width:96vw;
+            width:30vw;
             border-radius: var(--default-border-radius);
         }
 
@@ -30,6 +30,15 @@ class MyProduct extends HTMLElement {
         @keyframes anim-opacity {
             from {opacity:0;}
             to {opacity:1;}
+        }
+
+
+          @media screen and (max-width:600px) {
+            .product img {
+            box-shadow: 0.5vw 0.5vw 2vw #888;
+            width:96vw;
+            border-radius: var(--default-border-radius);
+        }
         }
         </style>
 
