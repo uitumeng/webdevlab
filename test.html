@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #a1{
+            display:none;
+        }
+
+        #aa::before {
+            content:"❤";
+            color:gray;
+            cursor:pointer;
+        }
+
+        #a1:checked+#aa::before{
+            color:tomato;
+        }
+
+        label{user-select: none;}
+    </style>
+   <script src="./modules/components/button-like.js" type="module"></script>
+</head>
+<body>
+    <input id="a1" type="checkbox">
+    <label for="a1" id="aa">99</label>
+
+    <button-like></button-like>
+    <button-like></button-like>
+    <button-like></button-like>
+    <button-like></button-like>
+    
+
+    
+</body>
+</html>

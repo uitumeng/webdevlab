@@ -1,135 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to ...</title>
+    <script src="spa.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;300;400&family=Open+Sans&display=swap" rel="stylesheet">
+   
     <style>
-        * { box-sizing: border-box;}
-        li {list-style: none;}
-        a {text-decoration: none;}
 
-        :root {
-            --default-primary-color:#CD2;
-            --default-section-border: 1px dashed grey;
+        body {
+            margin:0;
+            padding:0;
         }
 
-        h1{ color:var(--default-primary-color);}
-        
-        .recent-news h2{
-            margin:0;
-            padding:1px;
+        * {
+            box-sizing: border-box;
+            font-family:  'Exo 2', sans-serif;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            margin: 0;
+        }
+
+        :root {
+            --default-primary-color: tomato;
+            --default-section-border: 1px dashed grey;
+            --default-border-radius:2vw;
+        }
+
+        h1 {
+            color: var(--default-primary-color);
+        }
+
+        .main-header {
+            display: inline-block;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            background-color:tomato;
+            z-index: 1;
+            box-shadow: 0.5vw 0.5vw 2vw #888;
+        }
+
+        .main-menu {
+            width: 100vw;
+            display:inline-block;
+        }
+
+        .logoLink{
+            display:inline-block;
+            width:100px;
+        }
+
+        .logo {
+            max-width: 15vmax;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+
+        .main-menu-list {
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-item {flex:1 1 20ch; margin:2vw;}
+        .menu-item-link:hover{border-bottom:1px red solid;}
+        .menu-item-link { color:black; }
+
+        /* .product{
+            display:inline-block;
+            width:min-content;
+            margin-bottom:2vw;
+            padding:1vw;    
+            border-radius: var(--default-border-radius);
+            background-color: #f0f0f0;
+        }
+
+        .product img {
+            box-shadow: 0.5vw 0.5vw 2vw #888;
+            width:96vw;
+            border-radius: var(--default-border-radius);
+        }
+        .product h2 { 
+            position:relative; 
+            left:0; 
+            top:0; 
+            text-shadow: 0.25vw 0.25vw 0.25vw #999;}  */
+
+        @keyframes anim-opacity {
+            from {opacity:0;}
+            to {opacity:1;}
+        }
+        .recent-news h2 {
+            margin: 0;
+            padding: 1px;
+
+            color: var(--default-primary-color);
 
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            color:var(--default-primary-color);
+            color: var(--default-primary-color);
 
             transition: cubic-bezier(0.075, 0.82, 0.165, 1);
         }
 
-        section{ border:var(--default-section-border)}
-
-
+        section {
+            animation: anim-opacity 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            
+            /* border: var(--default-section-border) */
+        }
+        
         .main-content {
 
-            padding:1px;
-            margin:0;
+            padding: 1px;
+            margin: 0;
 
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
             transition: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
         }
-        .recent-news {
-        
-        }
-        
+
+        .recent-news {}
+
         .news-card-list {
-        display: flex;
-        flex-wrap: wrap;
+            display: flex;
+            flex-wrap: wrap;
         }
+
         .default-news-card {
             flex: 1 1 20ch;
         }
-        .ad-section {
 
-        }
+        .ad-section {}
 
         footer {
             display: grid;
             grid-template-columns: 3vw minmax(20ch, 50ch) minmax(30vw, auto) 3vw;
-            grid-template-areas: 
-            ". logo menu ."
-            ". logo links .";
+            grid-template-areas:
+                ". logo menu ."
+                ". logo links .";
         }
 
-        .footer-logo {grid-area: logo;}
-        .footer-nav {grid-area: menu;}
-        .footer-links {grid-area: links;}
+        .footer-logo {
+            grid-area: logo;
+        }
 
-        footer>nav>ul {display: flex; flex-wrap: wrap;}
+        .footer-nav {
+            grid-area: menu;
+        }
 
-        footer>nav>ul>li{flex: 1 1 10%;}
+        .footer-links {
+            grid-area: links;
+        }
 
-        @media screen and (max-width:1024px)
-        {
+        footer>nav>ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        footer>nav>ul>li {
+            flex: 1 1 10%;
+        }
+
+        @media screen and (max-width:1024px) {
 
             footer {
-            display: grid;
-            grid-template-columns: 1vw minmax(20ch, auto) 1vw;
-            grid-template-areas: 
-            ". logo ."
-            ". links ."
-            ". menu .";
-        }  
+                display: grid;
+                grid-template-columns: 1vw minmax(20ch, auto) 1vw;
+                grid-template-areas:
+                    ". logo ."
+                    ". links ."
+                    ". menu .";
+            }
         }
 
     </style>
 </head>
+
 <body>
-    <header class="main-header">
-        <a href="#"><img src="https://i.pinimg.com/originals/7a/74/9d/7a749deeb26561df33faf05292a0d07c.png" alt="" class="logo"></a>
+     <header class="main-header">
+        <a href="#" class="logoLink">
+            <svg class="logo" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round"
+                stroke-miterlimit="1.41421" viewBox="0 0 100 68" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="m49.735 58.35c0-2.684 2.154-4.838 4.838-4.838s4.837 2.154 4.837 4.838-2.153 4.838-4.837 4.838-4.838-2.154-4.838-4.838m19.682 0c0-2.684 2.154-4.838 4.838-4.838 2.683 0 4.837 2.154 4.837 4.838s-2.154 4.838-4.837 4.838c-2.684 0-4.838-2.154-4.838-4.838m-45.626 0c0-2.684 2.153-4.838 4.838-4.838 2.683 0 4.837 2.154 4.837 4.838s-2.154 4.838-4.837 4.838c-2.685 0-4.838-2.154-4.838-4.838m-19.682 0c0-2.684 2.153-4.838 4.837-4.838 2.685 0 4.838 2.154 4.838 4.838s-2.153 4.838-4.838 4.838c-2.684 0-4.837-2.154-4.837-4.838m39.794-8.549h-4.208v16.932h4.208zm-30.152 16.932h4.208v-16.932h-4.208v1.359c-1.425-.994-3.148-1.557-5.003-1.557-4.838 0-8.748 3.909-8.748 8.747 0 4.871 3.91 8.747 8.748 8.747 1.855 0 3.578-.563 5.003-1.557zm65.308 0h4.208v-16.932h-4.208v1.359c-1.425-.994-3.148-1.557-5.003-1.557-4.838 0-8.747 3.909-8.747 8.747 0 4.871 3.909 8.747 8.747 8.747 1.855 0 3.578-.563 5.003-1.557zm5.766-5.501c.132 3.413 3.048 5.832 7.919 5.832 3.976 0 7.256-1.723 7.256-5.533 0-2.651-1.491-4.208-4.937-4.871l-2.684-.53c-1.723-.331-2.916-.663-2.916-1.69 0-1.126 1.16-1.623 2.618-1.623 2.121 0 2.982 1.06 3.048 2.319h4.242c-.232-3.314-2.883-5.533-7.157-5.533-4.407 0-7.025 2.418-7.025 5.566 0 3.844 3.115 4.473 5.799 4.97l2.22.398c1.59.298 2.286.762 2.286 1.69 0 .828-.795 1.656-2.684 1.656-2.75 0-3.645-1.424-3.678-2.651zm-51.392-17.196v7.124c-1.425-.994-3.148-1.557-5.003-1.557-4.838 0-8.748 3.909-8.748 8.747 0 4.871 3.91 8.747 8.748 8.747 1.855 0 3.578-.563 5.003-1.557v1.193h4.208v-22.697zm25.944 0v7.124c-1.425-.994-3.148-1.557-5.003-1.557-4.838 0-8.747 3.909-8.747 8.747 0 4.871 3.909 8.747 8.747 8.747 1.855 0 3.578-.563 5.003-1.557v1.193h4.208v-22.697zm-48.443-5.003 2.85 5.003h19.649l-7.787-13.453zm32.969 9.211v-4.208h15.474l-16.501-28.562-14.745 8.449 11.564 20.113v4.208zm21.737-4.208h19.682l-25.448-44.036-14.711 8.482z"
+                    fill-rule="nonzero" />
+            </svg></a>
         <nav class="main-menu">
             <ul class="main-menu-list">
-                <li class="menu-item"><a href="/mypage12.html">Menu1</a></li>
-                <li class="menu-item"><a href="/mypage12.html">Menu2</a></li>
-                <li class="menu-item"><a href="/mypage12.html">Menu3</a></li>
-                <li class="menu-item"><a href="/mypage12.html">Menu4</a></li>
+                <li class="menu-item"><a id="l1" class="menu-item-link" href="/news" id="testid">News</a></li>
+                <li class="menu-item"><a id="l2" class="menu-item-link" href="/aboutus">About us</a></li>
+                <li class="menu-item"><a class="menu-item-link" href="/products">Products</a></li>
+                <li class="menu-item"><a class="menu-item-link" href="/">Home</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="main-content">
-        <h1>Welcome</h1>
+    <div id="myApp"></div>
+
+<h1>Welcome</h1>
         <section class="recent-news">
             <h2>Recent news</h2>
             <div class="news-card-list">
                 <article class="default-news-card">
                     <h3>Title1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea dicta alias itaque quae voluptas error dolorum qui pariatur sequi tempore!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea dicta alias itaque quae voluptas
+                        error dolorum qui pariatur sequi tempore!</p>
                 </article>
-                
+
                 <article class="default-news-card">
                     <h3>Title2</h3>
-                    <p>Dolore deserunt at inventore repudiandae natus aut, consequatur fugiat ratione iste asperiores possimus? Voluptatum inventore, porro laboriosam doloribus vel non.</p>
+                    <p>Dolore deserunt at inventore repudiandae natus aut, consequatur fugiat ratione iste asperiores
+                        possimus? Voluptatum inventore, porro laboriosam doloribus vel non.</p>
                 </article>
                 <article class="default-news-card">
                     <h3>Title3</h3>
-                    <p>Dignissimos deleniti in consectetur veritatis voluptatem doloremque optio porro repellendus voluptatum iste illum officiis quos illo, labore debitis ab veniam!</p>
+                    <p>Dignissimos deleniti in consectetur veritatis voluptatem doloremque optio porro repellendus
+                        voluptatum iste illum officiis quos illo, labore debitis ab veniam!</p>
                 </article>
                 <article class="default-news-card">
                     <h3>Title4</h3>
-                    <p>Eligendi ratione delectus maiores magni, eaque impedit officia nostrum ipsa at cum, deserunt velit exercitationem earum in. Totam, cumque sapiente.</p>
+                    <p>Eligendi ratione delectus maiores magni, eaque impedit officia nostrum ipsa at cum, deserunt
+                        velit exercitationem earum in. Totam, cumque sapiente.</p>
                 </article>
             </div>
         </section>
         <section class="ad-section">
             <h2>Advertisement</h2>
-            <img src="ad1.gif" alt=""><img src="ad2.gif" alt=""><img src="ad3.gif" alt=""></section>
+            <img src="ad1.gif" alt=""><img src="ad2.gif" alt=""><img src="ad3.gif" alt="">
+        </section>
     </main>
 
     <footer>
-        <div class="footer-logo"><img src="https://i.pinimg.com/originals/7a/74/9d/7a749deeb26561df33faf05292a0d07c.png" alt=""></div>
+        <div class="footer-logo"><img src="https://i.pinimg.com/originals/7a/74/9d/7a749deeb26561df33faf05292a0d07c.png"
+                alt=""></div>
         <nav class="footer-nav">
             <ul>
                 <li>
@@ -204,7 +323,8 @@
                         <li><a href="page04.html">Menu04</a></li>
                     </ul>
                 </li>
-            </ul> </nav>
+            </ul>
+        </nav>
         <div class="footer-links"><a href="">Link1</a><a href="">Link2</a><a href="">Link3</a><a href="">Link4</a></div>
     </footer>
 
@@ -217,5 +337,18 @@
             <div class="footer-links"></div>
         </div>
     </div>
+
+
+
+   
+
+   <my-product likes="0"></my-product>
+   <my-product likes="0"></my-product>
+   <my-product likes="0"></my-product>
+
+
+
+    <script src="./modules/components/product.js" type="module"></script>
 </body>
+
 </html>
