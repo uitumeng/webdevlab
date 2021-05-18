@@ -5,7 +5,7 @@
   "short_name": "WebDevLab",
   "scope": "/",
   "display": "standalone",
-  "start_url": "/",
+  "start_url": "/webdevlab/",
   "background_color": "#9f6af5",
   "theme_color": "#686bd2",
   "description": "",
