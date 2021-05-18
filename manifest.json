@@ -3,7 +3,7 @@
   "lang": "en",
   "name": "Demo web app WebDevLab",
   "short_name": "WebDevLab",
-  "scope": "/",
+  "scope": "/webdevlab/",
   "display": "standalone",
   "start_url": "/webdevlab/",
   "background_color": "#9f6af5",
